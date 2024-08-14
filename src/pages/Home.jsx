@@ -8,7 +8,7 @@ const Home = () => {
   const handleClose = () => setOpen(false);
   const [newtext, setnewtext] = useState("");
   const [selectedtext, setselectedtext] = useState(0);
-
+  const [play, setplay] = useState(false);
   let time = useRef(0);
   let interval = useRef(null);
   let timeinterval = useRef(null);
@@ -18,13 +18,13 @@ const Home = () => {
     (data[data.length - 1].start_time + data[data.length - 1].duration) / 1000;
   useEffect(() => {
     interval.current = setInterval(() => {
-      if (timeindex < data.length - 1) {
+      if (timeindex < data.length - 1 && play) {
         settimeindex((prev) => prev + 1);
       }
     }, data[timeindex].duration);
 
     return () => clearInterval(interval.current);
-  }, [timeindex]);
+  }, [timeindex, play]);
   useEffect(() => {
     timeinterval.current = setInterval(() => {
       if (time.current < totalreadtime) {
@@ -34,7 +34,7 @@ const Home = () => {
     return () => {
       clearInterval(timeinterval.current);
     };
-  }, []);
+  }, [play]);
 
   //setting intervals again after pause
   const fire = () => {
@@ -75,6 +75,7 @@ const Home = () => {
   };
 
   const handlestart = () => {
+    setplay(true);
     if (timeindex !== 0 && timeindex !== data.length - 1) {
       fire();
     } else {
@@ -87,6 +88,7 @@ const Home = () => {
     clearInterval(timeinterval.current);
   };
   const handlereset = () => {
+    setplay(false);
     clearInterval(interval.current);
     clearInterval(timeinterval.current);
     settimeindex(0);
