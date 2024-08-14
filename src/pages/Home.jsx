@@ -97,6 +97,9 @@ const Home = () => {
   return (
     <>
       <div className="w-screen h-screen flex flex-col justify-center items-center bg-black">
+        <h1 className=" font-bold text-3xl text-slate-300 mb-6">
+          Transcript Editor
+        </h1>
         <div className=" max-[768px]:w-[90%] overflow-auto p-4 w-[60%] h-[50%] border border-slate-900 bg-slate-900">
           <p className="flex flex-wrap">
             {data.map((c, i) => (
