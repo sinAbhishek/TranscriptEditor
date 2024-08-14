@@ -75,6 +75,7 @@ const Home = () => {
   };
 
   const handlestart = () => {
+    clearInterval(interval.current);
     setplay(true);
     if (timeindex !== 0 && timeindex !== data.length - 1) {
       fire();
