@@ -62,6 +62,7 @@ const Home = () => {
         : c
     );
     setdata(updatedtext);
+    handleClose();
   };
   // correcting all text that matches the selected text
   const correctAll = () => {
@@ -72,6 +73,7 @@ const Home = () => {
         : c
     );
     setdata(updatedtext);
+    handleClose();
   };
 
   const handlestart = () => {
