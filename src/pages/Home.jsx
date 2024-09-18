@@ -49,7 +49,7 @@ const Home = () => {
       }
     }, 1000);
   };
-  //editing the text
+  //editing text
   const handleChange = (e) => {
     setnewtext(e.target.value);
   };
