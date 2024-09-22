@@ -149,7 +149,7 @@ const Home = () => {
         </div>
       </div>
 
-      <ModalCom
+      <ModalCom //modal
         handleChange={handleChange}
         correct={correct}
         correctAll={correctAll}
