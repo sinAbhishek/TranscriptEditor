@@ -23,7 +23,7 @@ const Home = () => {
       }
     }, data[timeindex].duration);
 
-    return () => clearInterval(interval.current);
+    return () => clearInterval(interval.current); //cleanup
   }, [timeindex, play]);
   useEffect(() => {
     timeinterval.current = setInterval(() => {
