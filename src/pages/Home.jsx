@@ -64,7 +64,7 @@ const Home = () => {
     setdata(updatedtext);
     handleClose();
   };
-  // correcting all text that matches the target text
+  // correcting all the text that matches the target text
   const correctAll = () => {
     const selectedword = data[selectedtext].word;
     const updatedtext = data.map((c) =>
