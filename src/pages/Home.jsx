@@ -149,7 +149,7 @@ const Home = () => {
         </div>
       </div>
 
-      <ModalCom //modal
+      <ModalCom //modal textset
         handleChange={handleChange}
         correct={correct}
         correctAll={correctAll}
